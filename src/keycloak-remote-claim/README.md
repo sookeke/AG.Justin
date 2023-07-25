@@ -1,25 +1,16 @@
-# Credits
-
-The code in this forked repository is based on/inspired by the following repositories:
-
-- https://github.com/groupe-sii/keycloak-json-remote-claim
-- https://github.com/tagirova/keycloak-json-remote-claim
-- https://github.com/mschwartau/keycloak-custom-protocol-mapper-example
-
-Cheers!
 
 # GraphQL JSON Remote claim Mapper for Keycloak
 
-This module uses the unofficial Protocol Mapper SPI for keycloak.
+This module uses the Protocol Mapper SPI for keycloak.
 
 It adds a new mapper type which retrieves a JSON claim from a remote HTTP endpoint (e.g. from a REST API).
-This endpoint may be a GraphQL endpoint that uses bearer (JWT) token authentication. 
+This endpoint may be a GraphQL or REST endpoint that uses bearer (JWT) token authentication. 
 
 ## Compatibility
 
-This module currently works with Keycloak 10.0.0.
+This module currently works with Keycloak 10.0.0. For RED HAT SSO, use it's keycloak equivalent based on [RED HAT SSO Keycloak Equivalent](https://access.redhat.com/articles/2342881) 
 
-It is compatible with Keycloak >= 4.6.0 , you may just need to change the keycloak version in the ```pom.xml```.
+It is compatible with Keycloak >= 4.6.0 , you may just need to change the keycloak version in the ```pom.xml``` based on the RED HAT SSO equivalent.
 
 For version <= 4.5.0, the module will also work but a functionnality will be unavailable (see <sup>(1)</sup>).
 
