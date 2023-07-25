@@ -1,5 +1,5 @@
 
-# GraphQL JSON Remote claim Mapper for Keycloak
+# GraphQL and REST JSON Remote claim Mapper for Keycloak
 
 This module uses the Protocol Mapper SPI for keycloak.
 
