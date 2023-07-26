@@ -17,7 +17,11 @@ For version <= 4.5.0, the module will also work but a functionnality will be una
 ## Install
 
 Start by building the module:
+```Bash
+docker run --name KeycloakRedHat7.6 -p 8079:8070 -p 8077:8077 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -e JAVA_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8077" -d quay.io/keycloak/keycloak:18.0.2
 
+docker cp .\json-graphql-remote-claim.jar myKeyCloak:/opt/jboss/keycloak/standalone/deployments/
+```
 ```Bash
 mvn clean package
 ```
@@ -30,9 +34,11 @@ No restart should be required.
 
 ### Deploy in Docker
 
-To deploy automatically in docker, you can use this solution from Meinert Schwartau:
+```Bash
+docker run --name KeycloakRedHat7.6 -p 8079:8070 -p 8077:8077 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -e JAVA_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8077" -d quay.io/keycloak/keycloak:18.0.2
 
-https://github.com/mschwartau/keycloak-custom-protocol-mapper-example
+docker cp .\json-graphql-remote-claim.jar myKeyCloak:/opt/jboss/keycloak/standalone/deployments/
+```
 
 **NOTE**: For remote requests to work, your container's network setup has to 
 allow outbound connections! 
